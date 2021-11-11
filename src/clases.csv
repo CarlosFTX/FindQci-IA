@@ -1,0 +1,17 @@
+,ID_Objeto,ID_Pro,Tipo,Clase
+0,1,2,Otro,2
+1,2,2,Comestible,0
+2,3,2,No comestible,3
+3,4,1,Comestible,0
+4,5,1,No comestible,2
+5,6,1,Otro,2
+6,7,3,No comestible,0
+7,8,4,No comestible,3
+8,9,5,Otro,3
+9,10,6,Comestible,0
+10,11,7,Otro,2
+11,12,8,Otro,0
+12,13,9,No comestible,1
+13,14,10,Otro,1
+14,15,11,Otro,0
+15,16,12,No comestible,1
