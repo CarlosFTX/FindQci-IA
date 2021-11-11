@@ -1,0 +1,17 @@
+,id,tipo,id_p,estado,cantidad,tamanio,modulo
+0,1,Otro,2,0,0,1,1
+1,2,Comestible,2,0,2,1,0
+2,3,No comestible,2,0,2,0,2
+3,4,Comestible,1,0,2,0,0
+4,5,No comestible,1,0,0,0,1
+5,6,Otro,1,0,0,1,0
+6,7,No comestible,3,0,2,2,0
+7,8,No comestible,4,0,0,0,2
+8,9,Otro,5,0,0,0,2
+9,10,Comestible,6,0,2,1,1
+10,11,Otro,7,0,0,0,0
+11,12,Otro,8,0,2,2,2
+12,13,No comestible,9,2,0,1,2
+13,14,Otro,10,2,0,0,0
+14,15,Otro,11,1,1,2,0
+15,16,No comestible,12,2,0,0,2
