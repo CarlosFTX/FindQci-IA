@@ -1,5 +1,0 @@
-,id,tipo,id_p,estado,cantidad,tamanio,modulo
-0,1,No comestible,2,0,0,1,0
-1,2,Comestible,2,0,2,0,1
-2,3,No comestible,1,0,0,0,2
-3,4,Comestible,1,0,2,0,0
