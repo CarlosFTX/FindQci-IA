@@ -1,0 +1,5 @@
+,ID_Objeto,ID_Pro,Tipo,Clase
+0,1,2,No comestible,2
+1,2,2,Comestible,3
+2,3,1,No comestible,0
+3,4,1,Comestible,1

@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <br>
+  <h2>Encuentra tus pertenencias!</h2>
+  <br>
+  <h5>A continuación, se presenta un formulario, el cual es necesario completar 
+    con el objetivo de encontrar tus pertenencias.</h5>
+  <br>
+  <form action="/dataObjeto" method="post" class="was-validated">
+    <div class="form-group">
+      <label for="uname">a) La pertenencia es de tipo:</label>
+      <div class="form-group">
+        <select class="custom-select browser-default" name="a" id="a" required>
+          <option value="">Seleccionar Objeto</option>
+          <option value="Comestible">Comestible</option>
+          <option value="No comestible">No comestible</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div class="valid-feedback">Correcto.</div>
+        <div class="invalid-feedback">Opción no valida</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uname">b) El estado del objeto es:</label>
+      <div class="form-group">
+        <select class="custom-select browser-default" name="b" id="b" required>
+          <option value="">Seleccionar estado</option>
+          <option value="Bueno">Bueno</option>
+          <option value="Malo">Malo</option>
+          <option value="Regular">Regular</option>
+        </select>
+        <div class="valid-feedback">Correcto.</div>
+        <div class="invalid-feedback">Opción no valida</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uname">c) El número de objetos es de:</label>
+      <div class="form-group">
+        <select class="custom-select browser-default" name="c" id="c" required>
+          <option value="">Seleccionar número</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3 0 mas">3 o más</option>
+        </select>
+        <div class="valid-feedback">Correcto.</div>
+        <div class="invalid-feedback">Opción no valida</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uname">d) El tamaño de su pertenencia:</label>
+      <div class="form-group">
+        <select class="custom-select browser-default" name="d" id="d" required>
+          <option value="">Seleccionar Tamaño</option>
+          <option value="Chico">Chico</option>
+          <option value="Mediano">Mediano</option>
+          <option value="Grande">Grande</option>
+        </select>
+        <div class="valid-feedback">Correcto.</div>
+        <div class="invalid-feedback">Opción no valida</div>
+      </div>
+    </div>
+     
+    <div class="form-group">
+      <label for="uname">e) En que módulo extravío su pertenencia:</label>
+      <div class="form-group">
+        <select class="custom-select browser-default" name="e" id="e" required>
+          <option value="">Seleccionar Módulo CUCEI</option>
+          <option value="X">X</option>
+          <option value="P">P</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div class="valid-feedback">Correcto.</div>
+        <div class="invalid-feedback">Opción no valida</div>
+      </div>
+    </div>
+
+    <button type="submit" value="submit" class="btn btn-primary">Buscar</button>
+    <br><br><br>
+  </form>
+</div>
+</body>
+</html>
+
+{% endblock %}
+
+
+
+<a href="http://web.findqci.online/app/objetos/album.php?objeto=3&propietario=2" 
+class="btn btn-primary">Conocer Objeto</a>
+
+
+

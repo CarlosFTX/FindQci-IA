@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block content %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+  <title>FindQci Busqueda</title>
+</head>
+
+<body>
+  <br>
+  <h2>Éstas son las pertenencias que más se adaptan a su búsqueda</h2>
+  <br>
+
+  <script>
+    console.log("{{ text }}");
+    var registros = JSON.parse("{{ text }}");
+    var size = registros.length;
+
+    var nombre = '{{ name }}';
+    var tipo = '{{ tipo }}';
+    var foto = '{{ pic }}';
+    var img = null;
+    var imgE = null;
+
+    nombre = nombre.replace("[", "");
+    nombre = nombre.replace("]", "");
+    nombre = nombre.split(', ');
+    foto = foto.replace("[", "");
+    foto = foto.replace("]", "");
+    foto = foto.split(', ');
+
+    if(tipo == 'Comestibles'){
+      imgE = '../static/images/comestibles.png';
+    }else if(tipo == 'No comestibles'){
+      imgE = '../static/images/no_comestibles.png';
+    }else if(tipo == 'Otros'){
+      imgE = '../static/images/otros.png';
+    }
+
+    function reemplaza_imagen(imagen) {
+      imagen.onerror = "";
+      imagen.src = imgE;
+      return true;
+    }
+
+    for (var i = 0; i < size; i++) {
+
+      img = 'http://api.findqci.online/imagenes_objeto/./images/' + foto[i].slice(5, -5);
+
+      document.write('<div class="container">');
+      document.write('<div class="card">');
+      document.write('<img width=170 height=170 display="block" style="margin:0 auto" src="');
+      document.write(img);
+      document.write('" onerror="reemplaza_imagen(this)">');
+      document.write('<center><div class="card-body">');
+      document.write('<h5 class="card-title">');
+      document.write(nombre[i]);
+      document.write('</h5>');
+      document.write('<a href="http://web.findqci.online/app/objetos/album.php?objeto=');
+      document.write(registros[i][0]);
+      document.write('&propietario=');
+      document.write(registros[i][1]);
+      document.write('" class="btn btn-primary">Conocer Objeto</a>');
+      document.write('</div></center></div></div>');
+    }
+
+    if (size == 0) {
+
+      img = 'sad.png';
+      document.write('<center><h3>Lo sentimos! No se encontraron sugerencias</h3></center>');
+      document.write('<div class="container">')
+      document.write('<center><img width=155px height=155 src="../static/images/');
+      document.write(img);
+      document.write('"></center></div>')
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+{% endblock %}
