@@ -21,7 +21,7 @@ def predictor(data):
     objeto = np.array(data).reshape(1, -1)
     objeto = np.array(objeto, dtype=np.float64) / 255
 
-    model = pickle.load(open('src/Modelo_Recomendación.sav', 'rb'))
+    model = pickle.load(open('src/Modelo_Recomendacion.sav', 'rb'))
     clase_pred = model.predict(objeto)
     print('Predicción: ', clase_pred)
     print('')
